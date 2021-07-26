@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to:'homes#index'
-  # homes/indexに遷移
+  root to:'homes#top'
+
 
   resources :homes, only: [:new, :cerate, :show]
 
@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get 'home/about' => 'homes#show', as: 'about'
+  get 'home/about' => 'homes#about', as: 'about'
 end
